@@ -1,0 +1,30 @@
+
+def buscar_valor(matriz, valor):
+    for i in range(len(matriz)):
+        for j in range(len(matriz[0])):
+            if matriz[i][j] == valor:
+                return True, (i, j)
+    return False, None
+
+def main():
+    # Definir la matriz
+    matriz = [
+        [12, 2, 3],
+        [45, 50, 16],
+        [73, 81, 9]
+    ]
+
+    # Valor a buscar
+    valor_a_buscar = int(input("Ingrese el valor"))
+
+    # Buscar el valor en la matriz
+    encontrado, posicion = buscar_valor(matriz, valor_a_buscar)
+
+    # Mostrar resultado
+    if encontrado:
+        print(f"El valor {valor_a_buscar} se encontró en la posición {posicion}.")
+    else:
+        print(f"El valor {valor_a_buscar} no se encontró en la matriz.")
+
+if __name__ == "__main__":
+    main()
